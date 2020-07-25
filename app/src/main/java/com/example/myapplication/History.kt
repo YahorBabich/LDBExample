@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class History(
-    @PrimaryKey val uid: Int,
-    @ColumnInfo(name = "value") val value: String
-)
+data class History(@ColumnInfo(name = "value") val value: String) {
+    @PrimaryKey(autoGenerate = true)
+    var uid: Int = 0
+}
